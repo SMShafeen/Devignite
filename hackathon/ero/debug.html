@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+        #map {
+            height: 100%;
+        }
+
+        /* Optional: Makes the sample page fill the window. */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" name="" id="search-input" placeholder="Search a place...">
+    <div id="map" class="relative"></div>
+    <script>
+        window.onload = function () {
+            let input = document.getElementById('search-input')
+            let map = new google.maps.Map(document.getElementById('map'), {
+                center: new google.maps.LatLng(18.9733536, 72.82810492),
+                zoom: 10
+            });
+            let marker = new google.maps.Marker({
+                map: map
+            })
+            let options = {
+                types: ['(cities)'],
+                componentRestrictions: {
+                    country: ['ind']
+                }
+            }
+            let autocomplete = new google.maps.places.Autocomplete(input, options)
+            autocomplete.bindTo('bounds', map)
+            autocomplete.addListener('place_changed', function () {
+                marker.setVisible(false);
+                var place = autocomplete.getPlace();
+            })
+        }
+        window.onload = initMap;
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkm_qb9EcN8RdQ5dI10oHd6eA_tXk26Uk&libraries=places,marker&callback=initMap"
+        async defer></script>
+</body>
+
+</html>

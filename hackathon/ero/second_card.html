@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="second__card--parent bg-sky-200 w-2/6 bg-opacity-0">
+      <div class="second__card m-6 bg-white border w-2/3 shadow-md">
+        <div class="second__card--video p-2 relative w-full">
+          <div
+            class="back-to-fcard rounded-full bg-gray-300 w-8 h-8 top-3 absolute left-4 grid justify-center items-center"
+          >
+            <img src="/img/arrow.png" alt="" width="15px" />
+          </div>
+          <video
+            src="img/car__animation.mp4"
+            class="w-80"
+            autoplay
+            muted
+            loop
+          ></video>
+        </div>
+        <div class="card__content--first flex justify-between">
+          <div class="card__location_name">
+            <h1 class="px-2 font-semibold text-md">
+              Hotel Classik Dombivali Charging Station
+            </h1>
+            <h2 class="px-2 text-gray-300 text-sm">Dombivali-East</h2>
+            <p class="open__status p-2">
+              <span class="text-green-400 text-sm pr-2">Open Now </span>00:00 To
+              23:59
+            </p>
+            <h1 class="charger__type font-semibold p-2">
+              Hotel Classik Dombivali DC Charger
+            </h1>
+          </div>
+        </div>
+        <div class="charge__box p-2 flex justify-between">
+          <div
+            class="border border-gray-300 text-gray-400 w-30 rounded-sm px-2"
+          >
+            DC | 29kw
+          </div>
+          <div class="text-sm text-gray-400">&#8377; 15.99/Kwh</div>
+        </div>
+
+        <div class="charger-avail_data">
+          <div
+            class="charger__avail border border-gray-300 w-[90%] flex justify-between m-2 p-2 rounded-md mb-10"
+          >
+            <div class="avail px-1">
+              <h1>Connector 1</h1>
+              <p class="text-sm text-gray-500">CCS-2</p>
+            </div>
+            <div class="avail-status text-green-400 px-1 flex items-center">
+              Available
+            </div>
+            <div class="charger__type">
+              <img src="/img/ccs-2.png" alt="" class="w-10" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+        #map {
+            height: 100%;
+        }
+
+        /* Optional: Makes the sample page fill the window. */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body onload="initMap()">
+    <div class="form-group">
+    <input type="text" name="" id="source" placeholder="Search a place...">
+    </div>
+    <div class="form-group">
+    <input type="text" name="" id="destination" placeholder="Search a place...">
+    </div>
+    <button class="btn btn-primary" onclick="calcRoute()">go</button>
+    <div id="map" class="relative"></div>
+</body>
+<script>
+    
+    let directionsService, directionsRenderer
+    let sourceAutocomplete, destAutocomplete
+   async function initMap(){
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: new google.maps.LatLng(18.9733536, 72.82810492),
+          zoom: 10
+        });
+        google.maps.event.addListener(map, "click", function(event){
+
+        })
+        directionsService = new google.maps.DirectionsService()
+        directionsRenderer = new google.maps.DirectionsRenderer()
+        directionsRenderer.setMap(map)
+
+        sourceAutocomplete = new google.maps.places.Autocomplete(
+            document.getElementById('source')
+        )
+        destAutocomplete = new google.maps.places.Autocomplete(
+            document.getElementById('destination')
+        )
+    }
+    function calcRoute(){
+        var source = document.getElementById('source').value
+        var destination = document.getElementById('destination').value
+
+        let request = {
+            origin:source,
+            destination:destination,
+            travelMode:'DRIVING'
+        }
+        directionsService.route(request, function(result, status){
+            if(status == "OK"){
+                directionsRenderer.setDirections(result)
+            }
+        })
+    }
+
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkm_qb9EcN8RdQ5dI10oHd6eA_tXk26Uk&libraries=places,marker&callback=initMap" async defer></script>
+</html>

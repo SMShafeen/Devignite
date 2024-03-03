@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .bg-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      .bg-video__content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      input {
+        padding: 10px;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid #ccc;
+      }
+      /* form {
+        box-shadow: 12px 12px 12px black;
+      } */
+    </style>
+  </head>
+  <body class="w-full h-screen flex items-center justify-center bg-video">
+    <video class="bg-video__content object-cover z-[-1]" autoplay muted loop>
+      <source src="/img/3-simple-steps-video.webm" type="video/mp4" />
+    </video>
+    <div class="form relative ml-[50rem] w-2/3">
+      <div
+        class="bg-white bg-opacity-55 w-1/2 rounded-2xl overflow-hidden h-2/3 flex mx-52 justify-center items-center shadow-2xl"
+      >
+        <!-- <div class="right bg-sky-100 w-2/3">
+              
+            </div> -->
+        <form action="register.html" class="m-6 mt-10 w-[95%]">
+          <div class="inp-val flex flex-col m-2">
+            <label for="username" class="pb-3">User Name</label>
+            <input
+              type="text"
+              class="border h-[40px] placeholder:px-3 placeholder:text-gray-400 focus:outline-none bg-transparent border-b-gray-500"
+              placeholder="Enter Username"
+            />
+          </div>
+          <div class="inp-val flex flex-col m-2">
+            <label for="email" class="pb-3">Email</label>
+            <input
+              type="email"
+              class="border h-[40px] placeholder:px-3 placeholder:text-gray-400 focus:outline-none bg-transparent border-b-gray-500"
+              placeholder="Enter Email"
+            />
+          </div>
+          <div class="inp-pass flex flex-col m-2">
+            <label for="lname" class="pb-3">Password</label>
+            <input
+              type="password"
+              class="border h-[40px] placeholder:px-3 placeholder:text-gray-400 focus:outline-none bg-transparent border-b-gray-500"
+              placeholder="Enter Password"
+            />
+          </div>
+          <div class="inp-pass flex flex-col m-2">
+            <label for="cpass" class="pb-3">Confirm Password</label>
+            <input
+              type="text"
+              class="border h-[40px] placeholder:px-3 placeholder:text-gray-400 focus:outline-none bg-transparent border-b-gray-500"
+              placeholder="Confirm Password"
+            />
+            <div class="check mt-3">
+              <input type="checkbox" name="condition" id="" />
+              Agree to terms and conditons
+            </div>
+            <div class="text-center mt-8">
+              <a href="signup.html" class="hover:underline"
+                >Already have an account &rarr;</a
+              >
+            </div>
+          </div>
+          <div class="btn-class mt-12 text-center">
+            <button
+              class="rounded-lg bg-blue-950 text-sky-100 px-8 py-2 placeholder:px-3 placeholder:text-gray-400 font-semibold hover:text-black hover:border-blue-950 border border-white hover:bg-white"
+              type="button"
+            >
+              Register
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

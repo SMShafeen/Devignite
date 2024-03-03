@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .body-bg {
+        background-image: linear-gradient(
+            90deg,
+            rgba(50, 50, 50, 0.3),
+            rgba(0, 0, 0, 0.9)
+          ),
+          url(img/banner.png);
+      }
+      .ani-heading {
+        animation: trans 1s ease-in-out;
+        transition: all;
+      }
+
+      .ani-para {
+        animation: paratrans 1s ease-in-out;
+      }
+
+      @keyframes paratrans {
+        0% {
+          opacity: 0.1;
+          transform: translateY(530px);
+        }
+        50% {
+          opacity: 0.3;
+          /* transform: translateX(220px); */
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes trans {
+        0% {
+          opacity: 0.1;
+          transform: translateX(530px);
+        }
+        50% {
+          opacity: 0.3;
+          /* transform: translateX(220px); */
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+    </style>
+  </head>
+  <body class="body-bg object-fit">
+    <nav class="flex justify-between bg-gray-900">
+      <div
+        class="website_name pl-28 pt-6 pb-6 text-[1.5rem] text-white text-3xl font-semibold"
+      >
+        Green Express Path
+      </div>
+      <div class="links pt-6 space-x-8 text-white">
+        <a href="#" class="home pr-12 text-[1.15rem]">Home</a>
+        <a href="#" class="about pr-12 text-[1.15rem]">About</a>
+        <a href="#" class="contact pr-60 text-[1.15rem]">Contact</a>
+        <!-- <a
+              href="#"
+              class="login px-4 py-0.5 rounded-[10px] text-[1.3rem] border border-green-500 border-"
+              >login</a
+            >
+            <a
+              href="#"
+              class="signup bg-green-500 pt-1 pb-1 pr-3 pl-3 rounded-[10px] text-[1.3rem]"
+              >SignUp</a
+            > -->
+        <a
+          href="map.php"
+          class="contact text-[1.25rem] bg-gradient-to-r from-green-700 via-green-500 to-gray-200 text-transparent"
+          style="
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          "
+          >Locate Charger</a
+        >
+      </div>
+          
+    </nav>
+
+    <div class="heading-one flex flex-col justify-center items-center">
+      <h1
+        class="text-white text-5xl w-1/2 font-bold mt-56 text-cente tracking-wider text-center ani-heading"
+      >
+        Creating India's
+        <span
+          class="bg-gradient-to-r from-green-700 via-green-500 to-gray-200 text-transparent"
+          style="
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          "
+        >
+          largest EV
+        </span>
+        charger network.
+      </h1>
+      <div
+        class="flex mt-16 space-x-4 text-white text-center text-[1.5rem] ani-para"
+      >
+        <p class="font-semibold">Discover</p>
+        <span class="pl-4">|</span>
+
+        <p class="font-semibold">Charge</p>
+        <span class="pl-4">|</span>
+
+        <p class="font-semibold">Pay</p>
+      </div>
+    </div>
+
+    <div class="section__two relative h-60">
+      <div class="ev-charger-image absolute left-28 bottom-10">
+        <img
+          src="img/landing.png"
+          alt="ev-charger"
+          class="border border-white rounded-full"
+        />
+      </div>
+    </div>
+
+    <footer class="h-32 bg-gray-900 text-white">
+      <div class="footer__data">
+        <div class="footerlinks m-5 p-3">
+          <a href="#" class="text-lg">Privacy Policy</a> <span>|</span>
+          <a href="#" class="text-lg">Terms & Condition</a>
+          <div class="footer__copy">
+            <span class="text-sm">Copyright @2022 Green Express Path.</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
